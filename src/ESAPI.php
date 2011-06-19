@@ -113,7 +113,7 @@ class ESAPI
      *
      * @param AccessController $accessController the new ESAPI AccessController.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setAccessController($accessController)
     {
@@ -143,7 +143,7 @@ class ESAPI
      *
      * @param Encoder $encoder the new ESAPI AccessController.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setEncoder($encoder)
     {
@@ -170,7 +170,7 @@ class ESAPI
      *
      * @param Encryptor $encryptor the new ESAPI Encryptor.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setEncryptor($encryptor)
     {
@@ -203,7 +203,7 @@ class ESAPI
      *
      * @param Executor $executor the new ESAPI Executor.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setExecutor($executor)
     {
@@ -233,7 +233,7 @@ class ESAPI
      *
      * @param HttpUtilities $httpUtilities the new ESAPI HttpUtilities.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setHttpUtilities($httpUtilities)
     {
@@ -262,7 +262,7 @@ class ESAPI
      *
      * @param IntrusionDetector $intrusionDetector the new ESAPI IntrusionDetector.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setIntrusionDetector($intrusionDetector)
     {
@@ -308,7 +308,7 @@ class ESAPI
      *
      * @param string $factory the new ESAPI Logger factory.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setAuditorFactory($factory)
     {
@@ -339,7 +339,7 @@ class ESAPI
      *
      * @param Randomizer $randomizer the new ESAPI Randomizer.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setRandomizer($randomizer)
     {
@@ -372,7 +372,7 @@ class ESAPI
      * @param SecurityConfiguration $securityConfiguration the new ESAPI
      * SecurityConfiguration.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setSecurityConfiguration($securityConfiguration)
     {
@@ -402,7 +402,7 @@ class ESAPI
      *
      * @param Validator $validator the new ESAPI Validator.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setValidator($validator)
     {
@@ -432,7 +432,7 @@ class ESAPI
      *
      * @param Sanitizer $sanitizer the new ESAPI Sanitizer.
      *
-     * @return does not return a value.
+     * @return void
      */
     public static function setSanitizer($sanitizer)
     {
