@@ -55,7 +55,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
     public function __construct()
     {
         $this->_auditor = ESAPI::getAuditor('DefaultHTTPUtilities');
-	$this->_validator = ESAPI::getValidator();
+        $this->_validator = ESAPI::getValidator();
 
     }
 
