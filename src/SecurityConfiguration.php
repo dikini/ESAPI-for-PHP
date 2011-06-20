@@ -191,8 +191,8 @@ interface SecurityConfiguration
     function getDisableIntrusionDetection();
 
     /**
-     * Gets the name of the ESAPI resource directory as a String.
-     * 
+     * Gets the name of the ESAPI resource directory as a string.
+     *
      * @return string The ESAPI resource directory.
      */
     function getResourceDirectory();
@@ -256,9 +256,9 @@ interface SecurityConfiguration
     /**
      * Get the log level specified in the ESAPI configuration properties file.
      * Return a default value if it is not specified in the properties file.
-     * 
-     * @return int the logging level defined in the properties file. If none is 
-     *             specified, the default of Logger.WARNING is returned.
+     *
+     * @return int the logging level defined in the properties file. If none is
+     *             specified, the default of Logger::WARNING is returned.
      */
     function getLogLevel();
 
