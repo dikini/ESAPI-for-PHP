@@ -299,15 +299,12 @@ class DefaultHTTPUtilities implements HTTPUtilities
      */
     public function getParameter($request, $name, $default = null)
     {
-      $value = $request->getParameter($name);
-      if($this->_validator->isValidInput("HTTP parameter value: " . $value, $value, "HTTPParameterValue", 2000, true) )
-	{
-	  return $value;
-	}
-      else
-	{
-	  return $default;
-	}
+        $value = $request->getParameter($name);
+        if ($this->_validator->isValidInput("HTTP parameter value: " . $value, $value, "HTTPParameterValue", 2000, true) ) {
+	        return $value;
+	    } else {
+	        return $default;
+	    }
     }
 
     /**
