@@ -96,9 +96,9 @@ interface AccessReferenceMap
      * the AccessReferenceMap.
      * 
      * @param string $direct the direct reference to remove
-     * 
-     * @return does not return a avalue
-     * 
+     *
+     * @return void
+     *
      * @throws AccessControlException
      */
     function removeDirectReference($direct);
@@ -111,8 +111,8 @@ interface AccessReferenceMap
      * such as a URL parameter. 
      * 
      * @param string $directReferences a Set of direct references to add
-     * 
-     * @return does not return a avalue
+     *
+     * @return void
      */
     function update($directReferences);
 

@@ -162,7 +162,7 @@ interface AccessController
      *
      * @param string $url the URL as returned by $_SERVER['REQUEST_URI']
      * @throws AccessControlException if access is not permitted
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForURL($url);
 
@@ -191,7 +191,7 @@ interface AccessController
      *
      * @param string $functionName the function name
      * @throws AccessControlException if access is not permitted
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForFunction($functionName);
 
@@ -215,7 +215,7 @@ interface AccessController
      * </ol>
      * @param string $key the name of the target data object
      * @throws AccessControlException if access is not permitted
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForDataByKey($key);
 
@@ -243,7 +243,7 @@ interface AccessController
      * @param mixed  $data   the data to check for in the configuration file in
      *                       the resource directory
      * @throws AccessControlException if access is not permitted
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForData($action, $data);
 
@@ -271,7 +271,7 @@ interface AccessController
      *
      * @param string $filepath Path to the file to be checked
      * @throws AccessControlException if access is denied
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForFile($filepath);
 
@@ -299,7 +299,7 @@ interface AccessController
      *
      * @param string $serviceName the service name
      * @throws AccessControlException if access is not permitted
-     * @return void
+     * @return does not return a value.
      */
     function assertAuthorizedForService($serviceName);
 
