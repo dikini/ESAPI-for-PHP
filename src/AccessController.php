@@ -57,11 +57,9 @@ interface AccessController
      * true. This way, if the user is not authorized, false would be returned,
      * and the exception would be logged.
      *
-     * @param url
-     * 		the URL as returned by request.getRequestURI().toString()
-     *
-     * @return
-     * 		true, if is authorized for URL
+     * @param string $url the URL as returned by $_SERVER['REQUEST_URI']
+     * @throws AccessControlException on auth failure
+     * @return true, if is authorized for URL
      */
     function isAuthorizedForURL($url);
 
@@ -71,11 +69,9 @@ interface AccessController
      * The implementation of this method should call assertAuthorizedForFunction($functionName), and if an
      * AccessControlException is not thrown, this method should return true.
      *
-     * @param functionName
-     * 		the name of the function
-     *
-     * @return
-     * 		true, if is authorized for function
+     * @param string $functionName the name of the function
+     * @throws AccessControlException on auth failure
+     * @return true, if is authorized for function
      */
     function isAuthorizedForFunction($functionName);
 
@@ -87,8 +83,9 @@ interface AccessController
      * and if an AccessControlException is not thrown, this method should return
      * true.
      *
-     * @return
-     * 		true, if is authorized for the data
+     * @param string $key the name of the referenced data object
+     * @return true, if is authorized for the data
+     * @throws AccessControlException on auth failure
      */
     function isAuthorizedForDataByKey($key);
 
@@ -100,8 +97,12 @@ interface AccessController
      * and if an AccessControlException is not thrown, this method should return
      * true.
      *
-     * @return
-     * 		true, if is authorized for the data
+     * @param string $action the action to check for in the configuration file
+     *                       in the resource directory
+     * @param mixed $data    the data to check for in the configuration file in
+     *                       the resource directory
+     * @throws AccessControlException on auth failure
+     * @return true, if is authorized for the data
      */
     function isAuthorizedForData($action, $data);
 
@@ -112,11 +113,10 @@ interface AccessController
      * and if an AccessControlException is not thrown, this method should return
      * true.
      *
-     * @param filepath
-     * 		the path of the file to be checked, including filename
-     *
-     * @return
-     * 		true, if is authorized for the file
+     * @param string $filepath the path of the file to be checked, including
+     *                         filename
+     * @throws AccessControlException on auth failure
+     * @return true, if is authorized for the file
      */
     function isAuthorizedForFile($filepath);
 
@@ -154,11 +154,10 @@ interface AccessController
      *      </ol>
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
-     * @param url
-     * 		the URL as returned by request.getRequestURI().toString()
      *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $url the URL as returned by $_SERVER['REQUEST_URI']
+     * @throws AccessControlException if access is not permitted
+     * @return void
      */
     function assertAuthorizedForURL($url);
 
@@ -185,11 +184,9 @@ interface AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param functionName
-     * 		the function name
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $functionName the function name
+     * @throws AccessControlException if access is not permitted
+     * @return void
      */
     function assertAuthorizedForFunction($functionName);
 
@@ -211,11 +208,9 @@ interface AccessController
      *      </ol>
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
-     * @param key
-     * 		the name of the target data object
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $key the name of the target data object
+     * @throws AccessControlException if access is not permitted
+     * @return void
      */
     function assertAuthorizedForDataByKey($key);
 
@@ -238,14 +233,12 @@ interface AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param action
-     * 		the action to check for in the configuration file in the resource directory
-     *
-     * @param data
-     * 		the data to check for in the configuration file in the resource directory
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $action the action to check for in the configuration file
+     *                       in the resource directory
+     * @param mixed  $data   the data to check for in the configuration file in
+     *                       the resource directory
+     * @throws AccessControlException if access is not permitted
+     * @return void
      */
     function assertAuthorizedForData($action, $data);
 
@@ -271,9 +264,9 @@ interface AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param filepath
-     * 			Path to the file to be checked
+     * @param string $filepath Path to the file to be checked
      * @throws AccessControlException if access is denied
+     * @return void
      */
     function assertAuthorizedForFile($filepath);
 
@@ -299,14 +292,11 @@ interface AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param serviceName
-     * 		the service name
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $serviceName the service name
+     * @throws AccessControlException if access is not permitted
+     * @return void
      */
     function assertAuthorizedForService($serviceName);
-
 
 }
 ?>
