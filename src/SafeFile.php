@@ -31,12 +31,12 @@ require_once dirname(__FILE__).'/errors/ValidationException.php';
 
 
 /**
- * Use this ESAPI security control to read files from the operating 
+ * Use this ESAPI security control to read files from the operating
  * system.
- * 
- * The idea behind this interface is to extend the PHP SplFileObject 
- * to prevent against null byte injections and other unforeseen problems 
- * resulting from unprintable characters causing problems in path 
+ *
+ * The idea behind this interface is to extend the PHP SplFileObject
+ * to prevent against null byte injections and other unforeseen problems
+ * resulting from unprintable characters causing problems in path
  * lookups. This does NOT prevent against directory traversal attacks.
  *
  * @category  OWASP
