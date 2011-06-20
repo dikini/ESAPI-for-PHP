@@ -348,6 +348,7 @@ class DefaultAuditor implements Auditor
         }
 
         // Encode for HTML if ESAPI.xml says so
+        // TODO think this is still a Java thing. where's ESAPI.xml?
         $encodedMessage = null;
         if ($secConfig->getLogEncodingRequired() ) {
             try
