@@ -54,7 +54,7 @@ class DefaultExecutor implements Executor
 
     /**
      * Executor constructor.
-     *
+     * @todo pass in auditor and/or SecurityConfiguration as params for DI
      */
     public function __construct()
     {
