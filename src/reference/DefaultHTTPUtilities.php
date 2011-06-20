@@ -127,7 +127,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      * @param SafeRequest $request A request object.
      *
      * @return does not return a value.
-     *
+     * @todo use type hinting here for $request param
      * @throws IntrusionException if the CSRF token is missing or incorrect.
      */
     public function verifyCSRFToken($request)
