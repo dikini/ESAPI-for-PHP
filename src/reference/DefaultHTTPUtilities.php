@@ -50,7 +50,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
 
     /**
      * The constructor stores an instance of Auditor for the purpose of logging.
-     *
+     * @todo pass in Auditor and/or Validator for better DI
      */
     public function __construct()
     {
