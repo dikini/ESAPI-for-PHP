@@ -249,8 +249,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      */
     public function changeSessionIdentifier()
     {
-        $result = session_regenerate_id(true);
-        return $result;
+        return session_regenerate_id(true);
     }
 
 
