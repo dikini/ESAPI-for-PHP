@@ -45,8 +45,11 @@ class DefaultExecutor implements Executor
     private $_LogLevel = null;
     private $_LogFileName = null;
     private $_MaxLogFileSize = null;
-    
-    //SecurityConfiguration
+
+    /**
+     * App-level SecurityConfiguration instance
+     * @var SecurityConfiguration
+     */
     private $_config = null;
 
     /**
