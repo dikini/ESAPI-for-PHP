@@ -34,11 +34,11 @@ require_once dirname(__FILE__) . '/filters/SafeRequest.php';
 
 /**
  * Use this ESAPI security control to assist with HTTP security.
- * 
+ *
  * The idea behind this interface is to define a set of helper
  * functions related to HTTP requests, responses, sessions, cookies,
  * headers, and logging.
- * 
+ *
  * @category  OWASP
  * @package   ESAPI
  * @author    Andrew van der Stock <vanderaj@owasp.org>
@@ -140,17 +140,17 @@ interface HTTPUtilities
      * A safer replacement for getParameter() in SafeRequest that returns the canonicalized
      * value of the named parameter after "global" validation against the general
      * type defined in ESAPI.properties. Ths should not be considered a replacement for
-     * more specific validation. 
+     * more specific validation.
      *
      * @param SafeRequest $request Request object.
-     * @param string $name 
+     * @param string $name
      * @param string $default An optional default value to return if parameter does not pass validation
-     * 
+     *
      * @return the requested parameter value or $default if the named parameter does not pass validation
-     * 
+     * @todo JAVA-ism in the docs here, not yet sure what it should be replaced by
      */
     public function getParameter($request, $name, $default = null);
-    
+
 
     /**
      * Kill all cookies received in the last request from the browser. Note that
@@ -243,7 +243,7 @@ interface HTTPUtilities
      * the cookie exists for the current user, it should automatically be used
      * by ESAPI to log the user in, if the data is valid and not expired.
      *
-     * The ESAPI reference implementation, DefaultHTTPUtilities.setRememberToken()
+     * The ESAPI reference implementation, DefaultHTTPUtilities->setRememberToken()
      * implements all these suggestions.
      *
      * @param SafeRequest  $request  Request object.
