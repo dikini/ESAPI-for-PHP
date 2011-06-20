@@ -68,6 +68,7 @@ interface Validator
      *                          empty string will be legal. If allowNull is false
      *                          then NULL or an empty string will throw a
      *                          ValidationException.
+     * @throws ValidationException on invalid input
      *
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
@@ -87,7 +88,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is
      *                          false then NULL or an empty string will throw a
      *                          ValidationException.
-     *
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidDate($context, $input, $format, $allowNull);
@@ -111,7 +112,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is false
      *                          then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidHTML($context, $input, $maxLength, $allowNull);
@@ -129,7 +130,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is
      *                          false then NULL or an empty string will throw a
      *                          ValidationException.
-     *
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidCreditCard($context, $input, $allowNull);
@@ -146,7 +147,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is
      *                          false then NULL or an empty string will throw a
      *                          ValidationException.
-     *
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidDirectoryPath($context, $input, $allowNull);
@@ -166,7 +167,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is
      *                          false then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidNumber($context, $input, $minValue, $maxValue,
@@ -189,7 +190,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is
      *                          false then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidInteger($context, $input, $minValue, $maxValue,
@@ -212,7 +213,7 @@ interface Validator
      *                          an empty string will be legal. If allowNull is false
      *                          then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidDouble($context, $input, $minValue, $maxValue,
@@ -248,7 +249,7 @@ interface Validator
      *                          empty string will be legal. If allowNull is false
      *                          then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidPrintable($context, $input, $maxLength, $allowNull);
@@ -265,7 +266,7 @@ interface Validator
      *                          empty string will be legal. If allowNull is false
      *                          then NULL or an empty string will throw a
      *                          ValidationException.
-     * 
+     * @throws ValidationException on invalid input
      * @return bool TRUE if the input is valid, FALSE otherwise.
      */
     public function isValidRedirectLocation($context, $input, $allowNull);
