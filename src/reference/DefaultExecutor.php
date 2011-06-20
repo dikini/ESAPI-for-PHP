@@ -40,11 +40,7 @@ class DefaultExecutor implements Executor
 
     // Logger
     private $_auditor = null;
-    private $_ApplicationName = null;
-    private $_LogEncodingRequired = null;
-    private $_LogLevel = null;
-    private $_LogFileName = null;
-    private $_MaxLogFileSize = null;
+
 
     /**
      * App-level SecurityConfiguration instance
