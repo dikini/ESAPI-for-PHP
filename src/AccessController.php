@@ -45,9 +45,12 @@ require_once dirname(__FILE__) . '/errors/AccessControlException.php';
 interface AccessController
 {
     /**
-     * Checks if an account is authorized to access the referenced URL. Generally, this method should be invoked in the
-     * application's controller or a filter as follows:
-     * <PRE>ESAPI.accessController().isAuthorizedForURL(request.getRequestURI().toString());</PRE>
+     * Checks if an account is authorized to access the referenced URL. Generally,
+     * this method should be invoked in the application's controller or a filter
+     * as follows:
+     * <code>
+     * ESAPI::getAccessController()->isAuthorizedForURL($_SERVER['REQUEST_URI']);
+     * </code>
      *
      * The implementation of this method should call assertAuthorizedForURL($url), and if an AccessControlException is
      * not thrown, this method should return true. This way, if the user is not authorized, false would be returned, and the
