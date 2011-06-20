@@ -125,19 +125,24 @@ interface AccessController
      * can be used in applications that provide access to a variety of back end
      * services.
      *
-     * @param serviceName
-     * 		the service name
+     * The implementation of this method should call assertAuthorizedForService($serviceName),
+     * and if an AccessControlException is not thrown, this method should return
+     * true.
      *
-     * @return
-     * 		true, if is authorized for the service
+     * @param string $serviceName the service name
+     * @throws AccessControlException on auth failure
+     * @return true, if is authorized for the service
      */
     function isAuthorizedForService($serviceName);
 
     /**
-     * Checks if an account is authorized to access the referenced URL. The implementation should allow
-     * access to be granted to any part of the URL. Generally, this method should be invoked in the
-     * application's controller or a filter as follows:
-     * <PRE>ESAPI.accessController().assertAuthorizedForURL(request.getRequestURI().toString());</PRE>
+     * Checks if an account is authorized to access the referenced URL. The
+     * implementation should allow access to be granted to any part of the URL.
+     * Generally, this method should be invoked in the application's controller
+     * or a filter as follows:
+     * <code>
+     * ESAPI::getAccessController()->assertAuthorizedForURL($_SERVER['REQUEST_URI']);
+     * </code>
      *
      * This method throws an AccessControlException if access is not authorized,
      * or if the referenced URL does not exist. If the User is authorized, this
