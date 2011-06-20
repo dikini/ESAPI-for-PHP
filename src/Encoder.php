@@ -129,7 +129,7 @@ interface Encoder
      * Note that there is also "multipart/form" encoding, which allows files and
      * other binary data to be transmitted. Each part of a multipart form can
      * itself be encoded according to a "Content-Transfer-Encoding" header. See
-     * the HTTPUtilties.getSafeFileUploads() method.
+     * the HTTPUtilties->getSafeFileUploads() method.
      *
      * For more information on form encoding, please refer to the
      * <a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4">
