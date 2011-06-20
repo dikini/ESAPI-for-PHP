@@ -71,6 +71,7 @@ interface Validator
      * @throws ValidationException on invalid input
      *
      * @return bool TRUE if the input is valid, FALSE otherwise.
+     * @todo java-ism in the docs here, don't yet know what to replace it with
      */
     public function isValidInput($context, $input, $type, $maxLength, $allowNull);
 
