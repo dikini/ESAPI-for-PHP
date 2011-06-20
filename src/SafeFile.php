@@ -93,11 +93,11 @@ class SafeFile extends SplFileObject
     private function _doDirCheck($path)
     {
         $dir = $this->getPath();
-        
+
         if ( preg_match($this->_DIR_BLACKLIST_PAT, $dir) ) {
             throw new ValidationException(
                 'Invalid directory',
-                "Directory path ({$dir}) contains illegal character. "
+                "Directory path ({$dir}) contains illegal characters. "
             );
         }
 
@@ -112,7 +112,7 @@ class SafeFile extends SplFileObject
         if ($ch != -1) {
             throw new ValidationException(
                 'Invalid directory',
-                "Directory path ({$dir}) contains unprintable character. "
+                "Directory path ({$dir}) contains unprintable characters. "
             );
         }
     }
@@ -165,7 +165,7 @@ class SafeFile extends SplFileObject
         if ( preg_match($this->_FILE_BLACKLIST_PAT, $filename) ) {
             throw new ValidationException(
                 'Invalid file',
-                "File path ({$filename}) contains illegal character.");
+                "File path ({$filename}) contains illegal characters.");
         }
 
         if ( preg_match($this->_PERCENTS_PAT, $filename) ) {
@@ -179,7 +179,7 @@ class SafeFile extends SplFileObject
         if ($ch != -1) {
             throw new ValidationException(
                 'Invalid file',
-                "File path ({$filename}) contains unprintable character."
+                "File path ({$filename}) contains unprintable characters."
             );
         }
     }
