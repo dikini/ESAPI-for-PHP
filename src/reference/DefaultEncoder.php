@@ -276,7 +276,7 @@ class DefaultEncoder implements Encoder
         if ($input === null) {
             return null;
         }
-//TODO replace this with type hint on method param?
+        //TODO replace this with type hint on method param?
         if ($codec instanceof Codec == false) {
             ESAPI::getLogger('Encoder')->error(
                 ESAPILogger::SECURITY, false,

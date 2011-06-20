@@ -89,7 +89,7 @@ class StringUtilities
 
     /**
      * Returns true if the character is contained in the provided string.
-     * 
+     *
      * @param string $haystack the string to search
      * @param string $c        the character to search for in the string
      *

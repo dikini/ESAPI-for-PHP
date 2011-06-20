@@ -138,7 +138,7 @@ interface Randomizer
     function getRandomReal($min, $max);
 
     /**
-     * Generates a random GUID.  This method could use a hash of random ttrings,
+     * Generates a random GUID.  This method could use a hash of random strings,
      * the current time, and any other random data available.  The format is a
      * well-defined sequence of 32 hex digits grouped into chunks of 8-4-4-4-12.
      *

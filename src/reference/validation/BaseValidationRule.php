@@ -4,7 +4,11 @@
  *
  * This file is part of the Open Web Application Security Project (OWASP)
  * Enterprise Security API (ESAPI) project.
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
  * PHP version 5.2
  *
  * LICENSE: This source file is subject to the New BSD license.  You should read
@@ -48,6 +52,10 @@ abstract class BaseValidationRule implements ValidationRule
     protected $encoder   = null;
     protected $allowNull = false;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
     /**
      * Stores an instance of an Encoder implementation (e.g. DefaultEncoder) to
      * be used for canonicalization and a name for the type of Input to be
@@ -55,10 +63,19 @@ abstract class BaseValidationRule implements ValidationRule
      *
      * @param string  $typeName type name of the input to be validated.
      * @param Encoder $encoder  instance of an Encoder implementation.
+<<<<<<< HEAD
      *
      */
     protected function __construct($typeName, $encoder)
     {
+=======
+     * 
+     * @return does not return a value.
+     */
+    protected function __construct($typeName, $encoder)
+    {
+        global $ESAPI;
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
         if ($encoder instanceof Encoder) {
             $this->encoder = $encoder;
         } else {
@@ -73,7 +90,11 @@ abstract class BaseValidationRule implements ValidationRule
      * inputs to validate as true.
      *
      * @param bool $flag set to true if empty inputs should validate as true.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      * @return does not return a value.
      */
     public function setAllowNull($flag)
@@ -104,7 +125,11 @@ abstract class BaseValidationRule implements ValidationRule
      * If $typeName is empty or not a string then a default value will be set.
      *
      * @param string $typeName name describing the validator.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      * @return does not return a value.
      */
     public function setTypeName($typeName)
@@ -130,17 +155,29 @@ abstract class BaseValidationRule implements ValidationRule
     /**
      * Sets an instance of an encoder class which should provide a
      * canonicalize method.
+<<<<<<< HEAD
      * @TODO should ensure that a canonicalize method is available or should
      * only allow instances of Encoder implementations...
      *
      * @param Encoder $encoder object which provides a canonicalize method.
      *
+=======
+     * TODO should ensure that a canonicalize method is available or should
+     * only allow instances of Encoder implementations...
+     *
+     * @param Encoder $encoder object which provides a canonicalize method.
+     * 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      * @return does not return a value.
      * @throws InvalidArgumentException if encoder is missing a canonicalize method
      */
     final public function setEncoder($encoder)
     {
+<<<<<<< HEAD
         if ( ! is_object($encoder)
+=======
+        if (   ! is_object($encoder)
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
             || ! method_exists($encoder, 'canonicalize')
         ) {
             throw new InvalidArgumentException(
@@ -157,11 +194,19 @@ abstract class BaseValidationRule implements ValidationRule
      * that are obviously an attack will cause an IntrusionException.
      *
      * @param string $context A descriptive name of the parameter that you are
+<<<<<<< HEAD
      *                        validating (e.g., LoginPage_UsernameField). This
      *                        value is used by any logging or error handling that
      *                        is done with respect to the value passed in.
      * @param string $input   The actual user input data to validate.
      *
+=======
+     *                        validating (e.g., LoginPage_UsernameField). This 
+     *                        value is used by any logging or error handling that 
+     *                        is done with respect to the value passed in.
+     * @param string $input   The actual user input data to validate.
+     * 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      * @return does not return a value.
      */
     public function assertValid($context, $input)
@@ -176,12 +221,21 @@ abstract class BaseValidationRule implements ValidationRule
      * have any similarity to the original input.
      *
      * @param string $context A descriptive name of the parameter that you are
+<<<<<<< HEAD
      *                        validating (e.g., LoginPage_UsernameField). This
      *                        value is used by any logging or error handling that
      *                        is done with respect to the value passed in.
      * @param string $input   The actual user input data to validate.
      *
      * @return string valid, canonicalized input or sanitized input or a default
+=======
+     *                        validating (e.g., LoginPage_UsernameField). This 
+     *                        value is used by any logging or error handling that 
+     *                        is done with respect to the value passed in.
+     * @param string $input   The actual user input data to validate.
+     *
+     * @return string valid, canonicalized input or sanitized input or a default 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      *                value.
      */
     public function getSafe($context, $input)
@@ -203,8 +257,13 @@ abstract class BaseValidationRule implements ValidationRule
      * Returns boolean true if the input is valid, false otherwise.
      *
      * @param string $context A descriptive name of the parameter that you are
+<<<<<<< HEAD
      *                        validating (e.g., LoginPage_UsernameField). This
      *                        value is used by any logging or error handling that
+=======
+     *                        validating (e.g., LoginPage_UsernameField). This 
+     *                        value is used by any logging or error handling that 
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
      *                        is done with respect to the value passed in.
      * @param string $input   The actual user input data to validate.
      *
@@ -269,6 +328,7 @@ abstract class BaseValidationRule implements ValidationRule
         return $filtered;
     }
 
+<<<<<<< HEAD
     /**
      * The method is similar to getSafe except that it returns a harmless value
      * that may or may not have any similarity to the original input (in some
@@ -290,4 +350,6 @@ abstract class BaseValidationRule implements ValidationRule
         throw new ValidationAvailabilityException(
             'ValidationRule::sanitize must be implemented by a child class');
     }
+=======
+>>>>>>> ca3ccc0e08db78df895196bfadefbdf8fa586ded
 }
