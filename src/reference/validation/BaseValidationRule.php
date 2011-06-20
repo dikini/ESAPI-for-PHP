@@ -55,8 +55,7 @@ abstract class BaseValidationRule implements ValidationRule
      *
      * @param string  $typeName type name of the input to be validated.
      * @param Encoder $encoder  instance of an Encoder implementation.
-     * 
-     * @return does not return a value.
+     *
      */
     protected function __construct($typeName, $encoder)
     {
