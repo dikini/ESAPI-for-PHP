@@ -60,6 +60,7 @@ interface SecurityConfiguration
      * other location where a salt is needed.
      *
      * @return string the current master salt
+     * @todo more secure (in a crypto sense) to use per-use salts instead
      */
     function getMasterSalt();
 
