@@ -63,8 +63,6 @@ class DefaultAuditor implements Auditor
      * DefaultAuditor constructor.
      *
      * @param string $name logger name.
-     *
-     * @return does not return a value.
      */
     function __construct($name)
     {
