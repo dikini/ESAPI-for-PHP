@@ -329,37 +329,43 @@ interface SecurityConfiguration
  */
 class Threshold
 {
-    /** The name of this threshold. */
+    /**
+     * The name of this threshold.
+     * @var string
+     */
     public $name = null;
 
-    /** The count at which this threshold is triggered. */
+    /**
+     * The count at which this threshold is triggered.
+     * @var integer
+     */
     public $count = 0;
 
-    /** 
-     * The time frame within which 'count' number of actions has to be detected in 
+    /**
+     * The time frame within which 'count' number of actions has to be detected in
      * order to trigger this threshold.
+     * @var integer
      */
     public $interval = 0;
 
-    /** 
-     * The list of actions to take if the threshold is met. It is expected that 
-     * this is a list of Strings, but your implementation could have this be a 
-     * list of any type of 'actions' you wish to define. 
+    /**
+     * The list of actions to take if the threshold is met. It is expected that
+     * this is a list of strings, but your implementation could have this be a
+     * list of any type of 'actions' you wish to define.
+     * @var array
      */
     public $actions = null;
 
     /**
-     * Constructs a threshold that is composed of its name, its threshold count, 
-     * the time window for the threshold, and the actions to take if the threshold 
+     * Constructs a threshold that is composed of its name, its threshold count,
+     * the time window for the threshold, and the actions to take if the threshold
      * is triggered.
-     * 
+     *
      * @param string $name     The name of this threshold.
      * @param int    $count    The count at which this threshold is triggered.
      * @param int    $interval The time frame within which 'count' number of actions
      *                         has to be detected in order to trigger this threshold.
      * @param array  $actions  The list of actions to take if the threshold is met.
-     * 
-     * @return Does not return a value.
      */
     function __construct($name, $count, $interval, $actions)
     {
