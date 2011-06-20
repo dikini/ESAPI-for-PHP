@@ -4,7 +4,7 @@
  *
  * This file is part of the Open Web Application Security Project (OWASP)
  * Enterprise Security API (ESAPI) project.
- * 
+ *
  * PHP version 5.2
  *
  * LICENSE: This source file is subject to the New BSD license.  You should read
@@ -80,10 +80,10 @@ class DefaultEncoder implements Encoder
 
     /**
      * Encoder constructor.
-     * 
+     *
      * @param array $_codecs An array of Codec instances which will be used for
      *                       canonicalization.
-     *                    
+     *
      * @return does not return a value.
      */
     function __construct($_codecs = null)
@@ -281,7 +281,7 @@ class DefaultEncoder implements Encoder
         if ($input === null) {
             return null;
         }
-        
+
         if ($codec instanceof Codec == false) {
             ESAPI::getLogger('Encoder')->error(
                 ESAPILogger::SECURITY, false,
@@ -289,7 +289,7 @@ class DefaultEncoder implements Encoder
             );
             return null;
         }
-        
+
         return $codec->encode($this->_immune_os, $input);
     }
 
