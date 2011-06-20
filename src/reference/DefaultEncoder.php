@@ -86,7 +86,7 @@ class DefaultEncoder implements Encoder
      *
      * @return does not return a value.
      */
-    function __construct($_codecs = null)
+    function __construct(array $_codecs = array())
     {
         $this->logger = ESAPI::getAuditor("Encoder");
 
@@ -100,18 +100,13 @@ class DefaultEncoder implements Encoder
         $this->_xmlCodec        = new XMLEntityCodec();
 
         // initialise array of codecs for use by canonicalize
-        if ($_codecs === null) {
+        if (!empty($_codecs)) {
             array_push($this->_codecs, $this->_htmlCodec);
             array_push($this->_codecs, $this->_javascriptCodec);
             array_push($this->_codecs, $this->_percentCodec);
             // leaving css and vbs codecs out - they eat / and " chars respectively
             // array_push($this->_codecs,$this->_cssCodec);
             // array_push($this->_codecs,$this->_vbscriptCodec);
-        } else if (! is_array($_codecs)) {
-            throw new Exception(
-                'Invalid Argument. Codec list must be of type '.
-                'Array.'
-            );
         } else {
             // check array contains only codec instances
             foreach ($_codecs as $codec) {
