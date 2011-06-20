@@ -266,6 +266,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      *
      * @return bool TRUE if the request was made over Transport Layer Security
      *              FALSE otherwise.
+     * @todo use type-hinting here for $request
      *
      * @throws EnterpiseSecurityException
      */
@@ -315,7 +316,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      * this method.
      *
      * @param SafeRequest $request Request object.
-     *
+     * @todo use type-hinting here for $request
      * @return null.
      */
     public function killAllCookies($request)
@@ -339,7 +340,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      *
      * @param SafeRequest $request Request object.
      * @param string      $name    Name of the cookie to be killed.
-     *
+     * @todo use type-hinting here for $request
      * @return null.
      *
      */
@@ -395,7 +396,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      * throughout ESAPI (and elsewhere).
      *
      * @param SafeRequest $request Current Request object.
-     *
+     * @todo use type-hinting here for $request
      * @return null.
      */
     public function setCurrentHTTP($request)
@@ -427,7 +428,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      *
      * @param SafeRequest $request Current Request object.
      * @param Auditor     $auditor the auditor to write the request to.
-     *
+     * @todo use type-hinting here for $request
      * @return null
      */
     public function logHTTPRequest($request, $auditor)
@@ -449,7 +450,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      * @param SafeRequest $request           Current Request object.
      * @param Auditor     $auditor           The auditor to write the request to.
      * @param array|null  $paramsToObfuscate The sensitive parameters.
-     *
+     * @todo use type-hinting here for $request
      * @return null
      */
     public function logHTTPRequestObfuscate($request, $auditor, $paramsToObfuscate)
