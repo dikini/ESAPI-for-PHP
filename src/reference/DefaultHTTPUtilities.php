@@ -207,7 +207,7 @@ class DefaultHTTPUtilities implements HTTPUtilities
      *
      * @param SafeRequest $request The request object to test.
      *
-     * @return null
+     * @return this does not return a value.
      *
      * @throws AccessControlException if security constraints are not met.
      */
