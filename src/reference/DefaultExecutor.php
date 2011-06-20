@@ -55,7 +55,6 @@ class DefaultExecutor implements Executor
     /**
      * Executor constructor.
      *
-     * @return does not return a value.
      */
     public function __construct()
     {
