@@ -130,7 +130,7 @@ abstract class BaseValidationRule implements ValidationRule
     /**
      * Sets an instance of an encoder class which should provide a
      * canonicalize method.
-     * TODO should ensure that a canonicalize method is available or should
+     * @TODO should ensure that a canonicalize method is available or should
      * only allow instances of Encoder implementations...
      *
      * @param Encoder $encoder object which provides a canonicalize method.
