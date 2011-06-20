@@ -153,12 +153,12 @@ class DefaultHTTPUtilities implements HTTPUtilities
      * started at the time this method is called then the token will not be
      * generated.
      *
-     * @return null
+     * @return this does not return a value.
      */
     public function setCSRFToken()
     {
         if (! isset($_SESSION)) {
-            return null;
+            return;
         }
 
         if (! array_key_exists('ESAPI', $_SESSION)) {
