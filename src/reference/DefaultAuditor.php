@@ -227,9 +227,9 @@ class DefaultAuditor implements Auditor
      * If the supplied logging level is below the current logging threshold then
      * the message will be discarded.
      *
-     * @param int       $level     the priority level of the event - an Logger Level
+     * @param int       $level     the priority level of the event - a Logger Level
      *                             constant.
-     * @param int       $type      the type of the event - an Logger Event constant.
+     * @param int       $type      the type of the event - a Logger Event constant.
      * @param bool      $success   boolean true indicates this was a successful
      *                             event, false indicates this was a failed event
      *                             (the typical value).
