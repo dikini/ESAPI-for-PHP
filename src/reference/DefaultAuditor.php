@@ -63,6 +63,7 @@ class DefaultAuditor implements Auditor
      * DefaultAuditor constructor.
      *
      * @param string $name logger name.
+     * @todo add Logger via constructor injection for easier testing
      */
     function __construct($name)
     {
