@@ -64,6 +64,7 @@ class SafeFile extends SplFileObject
      * @param string $path the path to the file (path && file name)
      *
      * @return does not return a value.
+     * @todo __construct function should not "do work" as below. Static factory method instead?
      */
     function __construct($path)
     {
