@@ -56,7 +56,7 @@ class DefaultValidator implements Validator
     private $_rules = null;
     private $_auditor = null;
     private $_encoder = null;
-     
+
     const MAX_PARAMETER_NAME_LENGTH = 100;
     const MAX_PARAMETER_VALUE_LENGTH = 65535;
 
@@ -67,7 +67,6 @@ class DefaultValidator implements Validator
      */
     public function __construct()
     {
-        global $ESAPI;
         $this->_auditor = ESAPI::getAuditor('DefaultValidator');
         $this->_encoder = ESAPI::getEncoder();
     }
@@ -238,7 +237,7 @@ class DefaultValidator implements Validator
         $ccvr->setAllowNull($allowNull);
 
         $ccvr->assertValid($context, $input);
-         
+
         return null;
     }
 
@@ -488,7 +487,7 @@ class DefaultValidator implements Validator
             $context
             );
         }
-         
+
         if ($maxBytes !== null && $inputLen > $maxBytes ) {
             throw new ValidationException(
                  "{$context}: Invalid file content. Size must not exceed ".
@@ -598,7 +597,7 @@ class DefaultValidator implements Validator
      * @param string $input     Please see corresponding isValidXX description.
      * @param int    $maxLength Please see corresponding isValidXX description.
      * @param bool   $allowNull Please see corresponding isValidXX description.
-     * 
+     *
      * @return does not return a value.
      * @throws ValidationException thrown if input is invalid.
      * @throws IntrusionException thrown if intrusion is detected.
@@ -606,10 +605,10 @@ class DefaultValidator implements Validator
     private function _assertValidPrintable($context, $input, $maxLength, $allowNull)
     {
         $this->_assertValidInput($context, $input, 'PrintableASCII', $maxLength, $allowNull);
-        
+
         return null;
     }
-  
+
     /**
      * @inheritdoc
      */
@@ -617,5 +616,5 @@ class DefaultValidator implements Validator
     {
     	return $this->isValidInput($context, $input, "Redirect", 512, $allowNull);
     }
-    
+
 }
