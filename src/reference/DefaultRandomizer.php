@@ -141,47 +141,43 @@ class DefaultRandomizer implements Randomizer
      * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
      * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
-     * @param min
-     * 		the minimum real number that will be returned
-     * @param max
-     * 		the maximum real number that will be returned
+     * @param int $min the minimum real number that will be returned
+     * @param int $max the maximum real number that will be returned
      *
-     * @return
-     * 		the random real
+     * @return float the random real
      */
     public function getRandomReal($min, $max)
     {
-        $rf = (float) (mt_rand() / $this->maxRand);		// Maximizes the random bit counts from the PHP PRNG
+        // Maximizes the random bit counts from the PHP PRNG
+        $rf = (float) (mt_rand() / $this->maxRand);
 
         $factor = $max - $min;
         return (float) ($rf * $factor + $min);
     }
 
     /**
-     * Generates a random GUID.  This method could use a hash of random Strings, the current time,
-     * and any other random data available.  The format is a well-defined sequence of 32 hex digits
-     * grouped into chunks of 8-4-4-4-12.
+     * Generates a random GUID. This method could use a hash of random strings,
+     * the current time, and any other random data available. The format is a
+     * well-defined sequence of 32 hex digits grouped into chunks of 8-4-4-4-12.
      *
-     * Function from comments found on http://php.net/uniqid
+     * @link http://php.net/uniqid
      *
-     * @return
-     * 		the GUID
+     * @return string the GUID
      *
-     * @throws
-     * 		EncryptionException if hashing or encryption fails
+     * @throws EncryptionException if hashing or encryption fails
      */
     public function getRandomGUID()
     {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-        mt_rand(0, 65535), mt_rand(0, 65535), // 32 bits for "time_low"
-        mt_rand(0, 65535), // 16 bits for "time_mid"
-        					 mt_rand(0, 4095),  // 12 bits before the 0100 of (version) 4 for "time_hi_and_version"
-        					 bindec(substr_replace(sprintf('%016b', mt_rand(0, 65535)), '01', 6, 2)),
-				            // 8 bits, the last two of which (positions 6 and 7) are 01, for "clk_seq_hi_res"
-				            // (hence, the 2nd hex digit after the 3rd hyphen can only be 1, 5, 9 or d)
-				            // 8 bits for "clk_seq_low"
-					        mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535) // 48 bits for "node"
-					   );
+            mt_rand(0, 65535), mt_rand(0, 65535), // 32 bits for "time_low"
+            mt_rand(0, 65535), // 16 bits for "time_mid"
+            mt_rand(0, 4095),  // 12 bits before the 0100 of (version) 4 for "time_hi_and_version"
+        	bindec(substr_replace(sprintf('%016b', mt_rand(0, 65535)), '01', 6, 2)),
+            // 8 bits, the last two of which (positions 6 and 7) are 01, for "clk_seq_hi_res"
+            // (hence, the 2nd hex digit after the 3rd hyphen can only be 1, 5, 9 or d)
+            // 8 bits for "clk_seq_low"
+            mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535) // 48 bits for "node"
+        );
 	}
 
 }
