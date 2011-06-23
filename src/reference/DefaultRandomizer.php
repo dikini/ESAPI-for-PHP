@@ -24,7 +24,7 @@ class DefaultRandomizer implements Randomizer
 {
     private $maxRand;
 
-    function __construct()
+    public function __construct()
     {
         $this->maxRand = mt_getrandmax();
     }
@@ -43,7 +43,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		the random string of the desired length and character set
      */
-    function getRandomString($numChars, $charset)
+    public function getRandomString($numChars, $charset)
     {
 
         if ( $numChars < 1 || strlen($charset) < 2 ) {
@@ -71,7 +71,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		true or false, randomly
      */
-    function getRandomBoolean()
+    public function getRandomBoolean()
     {
         return (( mt_rand(0, 100) % 2) ? true : false);
     }
@@ -91,7 +91,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		the random integer
      */
-    function getRandomInteger($min, $max)
+    public function getRandomInteger($min, $max)
     {
         return mt_rand($min, $max);
     }
@@ -108,7 +108,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		the random long
      */
-    function getRandomLong()
+    public function getRandomLong()
     {
         return mt_rand();
     }
@@ -124,7 +124,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		a random unguessable filename ending with the specified extension
      */
-    function getRandomFilename($extension = '')
+    public function getRandomFilename($extension = '')
     {
         // Because PHP runs on case insensitive OS as well as case sensitive OS, only use lowercase
 
@@ -148,7 +148,7 @@ class DefaultRandomizer implements Randomizer
      * @return
      * 		the random real
      */
-    function getRandomReal($min, $max)
+    public function getRandomReal($min, $max)
     {
         $rf = (float) (mt_rand() / $this->maxRand);		// Maximizes the random bit counts from the PHP PRNG
 
@@ -169,7 +169,7 @@ class DefaultRandomizer implements Randomizer
      * @throws
      * 		EncryptionException if hashing or encryption fails
      */
-    function getRandomGUID()
+    public function getRandomGUID()
     {
         return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
         mt_rand(0, 65535), mt_rand(0, 65535), // 32 bits for "time_low"
