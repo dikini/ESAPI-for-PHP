@@ -33,19 +33,19 @@ class FileBasedAccessController implements AccessController
 {
 
     /**
-     * Checks if an account is authorized to access the referenced URL. Generally, this method should be invoked in the
-     * application's controller or a filter as follows:
-     * <PRE>ESAPI.accessController().isAuthorizedForURL(request.getRequestURI().toString());</PRE>
+     * Checks if an account is authorized to access the referenced URL.
+     * Generally, this method should be invoked in the application's controller
+     * or a filter as follows:
+     * <code>ESAPI::getAccessController()->isAuthorizedForURL($_SERVER['REQUEST_URI']);</code>
      *
-     * The implementation of this method should call assertAuthorizedForURL($url), and if an AccessControlException is
-     * not thrown, this method should return true. This way, if the user is not authorized, false would be returned, and the
-     * exception would be logged.
+     * The implementation of this method should call assertAuthorizedForURL($url),
+     * and if an AccessControlException is not thrown, this method should return
+     * true. This way, if the user is not authorized, false would be returned,
+     * and the exception would be logged.
      *
-     * @param url
-     * 		the URL as returned by request.getRequestURI().toString()
-     *
-     * @return
-     * 		true, if is authorized for URL
+     * @param string $url the URL as returned by $_SERVER['REQUEST_URI']
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for URL
      */
     function isAuthorizedForURL($url)
     {
@@ -55,14 +55,13 @@ class FileBasedAccessController implements AccessController
     /**
      * Checks if an account is authorized to access the referenced function.
      *
-     * The implementation of this method should call assertAuthorizedForFunction($functionName), and if an
+     * The implementation of this method should call
+     * assertAuthorizedForFunction($functionName), and if an
      * AccessControlException is not thrown, this method should return true.
      *
-     * @param functionName
-     * 		the name of the function
-     *
-     * @return
-     * 		true, if is authorized for function
+     * @param string $functionName the name of the function
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for function
      */
     function isAuthorizedForFunction($functionName)
     {
@@ -70,16 +69,16 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced data, represented as a String.
+     * Checks if an account is authorized to access the referenced data,
+     * represented as a string.
      *
-     * The implementation of this method should call assertAuthorizedForData($key), and if an AccessControlException
-     * is not thrown, this method should return true.
+     * The implementation of this method should call assertAuthorizedForData($key),
+     * and if an AccessControlException is not thrown, this method should return
+     * true.
      *
-     * @param key
-     * 		the name of the referenced data object
-     *
-     * @return
-     * 		true, if is authorized for the data
+     * @param string $key the name of the referenced data object
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for the data
      */
     function isAuthorizedForDataByKey($key)
     {
@@ -87,19 +86,20 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced data, represented as an Object.
+     * Checks if an account is authorized to access the referenced data,
+     * represented as an object.
      *
-     * The implementation of this method should call assertAuthorizedForData($action, Object data), and if an
-     * AccessControlException is not thrown, this method should return true.
+     * The implementation of this method should call
+     * assertAuthorizedForData($action, $data), and if an AccessControlException
+     * is not thrown, this method should return true.
      *
-     * @param action
-     * 		the action to check for in the configuration file in the resource directory
+     * @param string $action the action to check for in the configuration file
+     *                       in the resource directory
      *
-     * @param data
-     * 		the data to check for in the configuration file in the resource directory
-     *
-     * @return
-     * 		true, if is authorized for the data
+     * @param mixed $data    the data to check for in the configuration file in
+     *                       the resource directory
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for the data
      */
     function isAuthorizedForData($action, $data)
     {
@@ -109,14 +109,14 @@ class FileBasedAccessController implements AccessController
     /**
      * Checks if an account is authorized to access the referenced file.
      *
-     * The implementation of this method should call assertAuthorizedForFile($filepath), and if an AccessControlException
-     * is not thrown, this method should return true.
+     * The implementation of this method should call
+     * assertAuthorizedForFile($filepath), and if an AccessControlException is
+     * not thrown, this method should return true.
      *
-     * @param filepath
-     * 		the path of the file to be checked, including filename
-     *
-     * @return
-     * 		true, if is authorized for the file
+     * @param string $filepath the path of the file to be checked, including
+     *                         filename
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for the file
      */
     function isAuthorizedForFile($filepath)
     {
@@ -124,17 +124,17 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced service. This can be used in applications that
-     * provide access to a variety of back end services.
+     * Checks if an account is authorized to access the referenced service. This
+     * can be used in applications that provide access to a variety of back end
+     * services.
      *
-     * The implementation of this method should call assertAuthorizedForService($serviceName), and if an
+     * The implementation of this method should call
+     * assertAuthorizedForService($serviceName), and if an
      * AccessControlException is not thrown, this method should return true.
      *
-     * @param serviceName
-     * 		the service name
-     *
-     * @return
-     * 		true, if is authorized for the service
+     * @param string $serviceName the service name
+     * @throws AccessControlException if access is not permitted
+     * @return true, if is authorized for the service
      */
     function isAuthorizedForService($serviceName)
     {
@@ -142,14 +142,16 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced URL. The implementation should allow
-     * access to be granted to any part of the URL. Generally, this method should be invoked in the
-     * application's controller or a filter as follows:
-     * <PRE>ESAPI.accessController().assertAuthorizedForURL(request.getRequestURI().toString());</PRE>
+     * Checks if an account is authorized to access the referenced URL. The
+     * implementation should allow access to be granted to any part of the URL.
+     * Generally, this method should be invoked in the application's controller
+     * or a filter as follows:
+     * <code>ESAPI::getAccessController()->assertAuthorizedForURL($_SERVER['REQUEST_URI']);</code>
      *
-     * This method throws an AccessControlException if access is not authorized, or if the referenced URL does not exist.
-     * If the User is authorized, this method simply returns.
-     * <P>
+     * This method throws an AccessControlException if access is not authorized,
+     * or if the referenced URL does not exist. If the User is authorized, this
+     * method simply returns.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the resource exists and if not, throw an AccessControlException</li>
@@ -161,11 +163,9 @@ class FileBasedAccessController implements AccessController
      *      </ol>
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
-     * @param url
-     * 		the URL as returned by request.getRequestURI().toString()
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $url the URL as returned by $_SERVER['REQUEST_URI']
+     * @return this does not return a value.
+     * @throws AccessControlException if access is not permitted
      */
     function assertAuthorizedForURL($url)
     {
@@ -173,13 +173,15 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced function. The implementation should define the
-     * function "namespace" to be enforced. Choosing something simple like the class name of action classes or menu item
-     * names will make this implementation easier to use.
-     * <P>
-     * This method throws an AccessControlException if access is not authorized, or if the referenced function does not exist.
-     * If the User is authorized, this method simply returns.
-     * <P>
+     * Checks if an account is authorized to access the referenced function. The
+     * implementation should define the function "namespace" to be enforced.
+     * Choosing something simple like the class name of action classes or menu
+     * item names will make this implementation easier to use.
+     * <p>
+     * This method throws an AccessControlException if access is not authorized,
+     * or if the referenced function does not exist. If the User is authorized,
+     * this method simply returns.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the function exists and if not, throw an AccessControlException</li>
@@ -192,11 +194,9 @@ class FileBasedAccessController implements AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param functionName
-     * 		the function name
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $functionName the function name
+     * @return this does not return a value.
+     * @throws AccessControlException if access is not permitted
      */
     function assertAuthorizedForFunction($functionName)
     {
@@ -204,9 +204,11 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if the current user is authorized to access the referenced data.  This method simply returns if access is authorized.
-     * It throws an AccessControlException if access is not authorized, or if the referenced data does not exist.
-     * <P>
+     * Checks if the current user is authorized to access the referenced data.
+     * This method simply returns if access is authorized. It throws an
+     * AccessControlException if access is not authorized, or if the referenced
+     * data does not exist.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the resource exists and if not, throw an AccessControlException</li>
@@ -218,11 +220,9 @@ class FileBasedAccessController implements AccessController
      *      </ol>
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
-     * @param key
-     * 		the name of the target data object
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $key the name of the target data object
+     * @return this does not return a value.
+     * @throws AccessControlException if access is not permitted
      */
     function assertAuthorizedForDataByKey($key)
     {
@@ -230,9 +230,11 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if the current user is authorized to access the referenced data.  This method simply returns if access is authorized.
-     * It throws an AccessControlException if access is not authorized, or if the referenced data does not exist.
-     * <P>
+     * Checks if the current user is authorized to access the referenced data.
+     * This method simply returns if access is authorized. It throws an
+     * AccessControlException if access is not authorized, or if the referenced
+     * data does not exist.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the resource exists and if not, throw an AccessControlException</li>
@@ -245,14 +247,13 @@ class FileBasedAccessController implements AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param action
-     * 		the action to check for in the configuration file in the resource directory
+     * @param string $action the action to check for in the configuration file
+     *                       in the resource directory
      *
-     * @param data
-     * 		the data to check for in the configuration file in the resource directory
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param mixed  $data   the data to check for in the configuration file in
+     *                       the resource directory
+     * @return this does not return a value.
+     * @throws AccessControlException if access is not permitted
      */
     function assertAuthorizedForData($action, $data)
     {
@@ -260,12 +261,14 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced file. The implementation should validate and canonicalize the
-     * input to be sure the filepath is not malicious.
-     * <P>
-     * This method throws an AccessControlException if access is not authorized, or if the referenced File does not exist.
-     * If the User is authorized, this method simply returns.
-     * <P>
+     * Checks if an account is authorized to access the referenced file. The
+     * implementation should validate and canonicalize the input to be sure the
+     * filepath is not malicious.
+     * <p>
+     * This method throws an AccessControlException if access is not authorized,
+     * or if the referenced File does not exist. If the User is authorized, this
+     * method simply returns.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the File exists and if not, throw an AccessControlException</li>
@@ -278,9 +281,9 @@ class FileBasedAccessController implements AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param filepath
-     * 			Path to the file to be checked
+     * @param string $filepath Path to the file to be checked
      * @throws AccessControlException if access is denied
+     * @return this does not return a value.
      */
     function assertAuthorizedForFile($filepath)
     {
@@ -288,12 +291,14 @@ class FileBasedAccessController implements AccessController
     }
 
     /**
-     * Checks if an account is authorized to access the referenced service. This can be used in applications that
-     * provide access to a variety of backend services.
-     * <P>
-     * This method throws an AccessControlException if access is not authorized, or if the referenced service does not exist.
-     * If the User is authorized, this method simply returns.
-     * <P>
+     * Checks if an account is authorized to access the referenced service. This
+     * can be used in applications that provide access to a variety of backend
+     * services.
+     * <p>
+     * This method throws an AccessControlException if access is not authorized,
+     * or if the referenced service does not exist. If the User is authorized,
+     * this method simply returns.
+     * <p>
      * Specification:  The implementation should do the following:
      * <ol>
      * <li>Check to see if the service exists and if not, throw an AccessControlException</li>
@@ -306,11 +311,9 @@ class FileBasedAccessController implements AccessController
      * <li>If access is not permitted, throw an AccessControlException with details</li>
      * </ol>
      *
-     * @param serviceName
-     * 		the service name
-     *
-     * @throws AccessControlException
-     * 		if access is not permitted
+     * @param string $serviceName the service name
+     * @return this does not return a value.
+     * @throws AccessControlException if access is not permitted
      */
     function assertAuthorizedForService($serviceName)
     {
