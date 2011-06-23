@@ -180,7 +180,7 @@ class DefaultRandomizer implements Randomizer
 				            // (hence, the 2nd hex digit after the 3rd hyphen can only be 1, 5, 9 or d)
 				            // 8 bits for "clk_seq_low"
 					        mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535) // 48 bits for "node"
-					   );  
+					   );
 	}
 
 }
