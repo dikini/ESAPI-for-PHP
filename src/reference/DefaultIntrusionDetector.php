@@ -64,7 +64,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      * Constructor stores an instance of Auditor for logging and initialises the
      * storage for events generated for a user.
      *
-     * @return null
+     * @return this does not return a value.
      */
     function __construct()
     {
@@ -84,7 +84,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      *
      * @param Exception $exception The exception to add.
      *
-     * @return null
+     * @return this does not return a value.
      */
     public function addException($exception)
     {
@@ -145,7 +145,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      * @param string $eventName  The event to add.
      * @param string $logMessage Message to log with the event.
      *
-     * @return null
+     * @return this does not return a value.
      */
     public function addEvent($eventName, $logMessage)
     {
@@ -194,7 +194,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      * @param string $action  The action to take.
      * @param string $message Message to log where the action is 'log'.
      *
-     * @return null
+     * @return this does not return a value.
      */
     private function _takeSecurityAction($action, $message)
     {
@@ -218,7 +218,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      *
      * @param string $eventName The name of the event that occurred.
      *
-     * @return null
+     * @return this does not return a value.
      */
     private function _addSecurityEvent($eventName)
     {
@@ -305,7 +305,7 @@ class Event
      * @param string $key A name by which the event is known e.g.
      *                   'IntegrityException'.
      *
-     * @return null
+     * @return this does not return a value.
      */
     public function __construct($key)
     {
@@ -328,7 +328,7 @@ class Event
      * @param int $interval The number of seconds within which the supplied quota of
      *                      event occurrences will trigger Intrusion Detection.
      *
-     * @return null
+     * @return this does not return a value.
      */
     public function increment($count, $interval)
     {
