@@ -85,13 +85,10 @@ class DefaultRandomizer implements Randomizer
      * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
      * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
-     * @param min
-     * 		the minimum integer that will be returned
-     * @param max
-     * 		the maximum integer that will be returned
+     * @param int $min the minimum integer that will be returned
+     * @param int $max the maximum integer that will be returned
      *
-     * @return
-     * 		the random integer
+     * @return int the random integer
      */
     public function getRandomInteger($min, $max)
     {
@@ -106,10 +103,10 @@ class DefaultRandomizer implements Randomizer
      * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
      * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
-     * mt_rand() without arguments will return between 0 and mt_getrandmax(). That's about as good as PHP gets
+     * mt_rand() without arguments will return between 0 and mt_getrandmax().
+     * That's about as good as PHP gets
      *
-     * @return
-     * 		the random long
+     * @return int the random long
      */
     public function getRandomLong()
     {
@@ -117,23 +114,23 @@ class DefaultRandomizer implements Randomizer
     }
 
     /**
-     * Returns an unguessable random filename with the specified extension.  This method could call
-     * getRandomString(length, charset) from this Class with the desired length and alphanumerics as the charset
-     * then merely append "." + extension.
+     * Returns an unguessable random filename with the specified extension. This
+     * method could call $this->getRandomString($numChars, $charset) with the
+     * desired length and alphanumerics as the charset then merely  append "." +
+     * extension.
      *
-     * @param extension
-     * 		extension to add to the random filename
+     * @param string $extension extension to add to the random filename
      *
-     * @return
-     * 		a random unguessable filename ending with the specified extension
+     * @return string a random unguessable filename ending with the specified
+     *                extension
      */
     public function getRandomFilename($extension = '')
     {
-        // Because PHP runs on case insensitive OS as well as case sensitive OS, only use lowercase
-
+        // Because PHP runs on case insensitive OS as well as case-sensitive OS,
+        // only use lowercase
         $rs = $this->getRandomString(16, 'abcdefghijklmnopqrstuvxyz0123456789');
         $rs .= $extension;
-        return  $rs;
+        return $rs;
     }
 
     /**
