@@ -86,6 +86,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      * @param Exception $exception The exception to add.
      *
      * @return this does not return a value.
+     * @todo should type hint here, no other type checking is done & needs getMessage
      */
     public function addException($exception)
     {
