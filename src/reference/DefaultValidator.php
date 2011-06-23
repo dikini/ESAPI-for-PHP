@@ -121,7 +121,6 @@ class DefaultValidator implements Validator
 
         $validationRule->assertValid($context, $input);
 
-        return null;
     }
 
 
