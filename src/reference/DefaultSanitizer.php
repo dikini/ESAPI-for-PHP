@@ -54,7 +54,6 @@ class DefaultSanitizer implements Sanitizer
 
     public function __construct()
     {
-        global $ESAPI;
         $this->encoder = ESAPI::getEncoder();
     }
 
