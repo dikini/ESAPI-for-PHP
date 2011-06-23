@@ -63,13 +63,13 @@ class DefaultSanitizer implements Sanitizer
      *
      * This implementation uses HTMLPurifier {@link http://htmlpurifier.org}.
      *
-     * @param  $context A descriptive name of the parameter that you are
-     *         validating (e.g. ProfilePage_Sig). This value is used by any
-     *         logging or error handling that is done with respect to the value
-     *         passed in.
-     * @param  $input The actual user input data to validate.
+     * @param  string $context A descriptive name of the parameter that you are
+     *                         validating (e.g. ProfilePage_Sig). This value is
+     *                         used by any logging or error handling that is
+     *                         done with respect to the value passed in.
+     * @param  string $input   The actual user input data to validate.
      *
-     * @return valid, "safe" HTML.
+     * @return string valid, "safe" HTML.
      */
     function getSanitizedHTML($context, $input)
     {
@@ -83,13 +83,13 @@ class DefaultSanitizer implements Sanitizer
      *
      * This implementation uses a PHP filter {@link http://php.net/manual/en/filter.filters.sanitize.php}.
      *
-     * @param  $context A descriptive name of the parameter that you are
-     *         validating (e.g. ProfilePage_Sig). This value is used by any
-     *         logging or error handling that is done with respect to the value
-     *         passed in.
-     * @param  $input The actual user input data to validate.
+     * @param  string $context A descriptive name of the parameter that you are
+     *                         validating (e.g. ProfilePage_Sig). This value is
+     *                         used by any logging or error handling that is
+     *                         done with respect to the value passed in.
+     * @param  string $input   The actual user input data to validate.
      *
-     * @return valid, "safe" email address.
+     * @return string valid, "safe" email address.
      */
     function getSanitizedEmailAddress($context, $input)
     {
@@ -103,13 +103,13 @@ class DefaultSanitizer implements Sanitizer
      *
      * This implementation uses a PHP filter {@link http://php.net/manual/en/filter.filters.sanitize.php}.
      *
-     * @param  $context A descriptive name of the parameter that you are
-     *         validating (e.g. ProfilePage_Sig). This value is used by any
-     *         logging or error handling that is done with respect to the value
-     *         passed in.
-     * @param  $input The actual user input data to validate.
+     * @param  string $context A descriptive name of the parameter that you are
+     *                         validating (e.g. ProfilePage_Sig). This value is
+     *                         used by any logging or error handling that is
+     *                         done with respect to the value passed in.
+     * @param  string $input   The actual user input data to validate.
      *
-     * @return valid, "safe" URL.
+     * @return string valid, "safe" URL.
      */
     function getSanitizedURL($context, $input)
     {
@@ -120,13 +120,13 @@ class DefaultSanitizer implements Sanitizer
     /**
      * Returns valid, "safe" English language word based on the provided guess.
      *
-     * @param  $context A descriptive name of the parameter that you are
-     *         validating (e.g. ProfilePage_Sig). This value is used by any
-     *         logging or error handling that is done with respect to the value
-     *         passed in.
-     * @param  $input An array with the unsanitized word and a guess.
+     * @param string $context A descriptive name of the parameter that you are
+     *                         validating (e.g. ProfilePage_Sig). This value is
+     *                         used by any logging or error handling that is
+     *                         done with respect to the value passed in.
+     * @param string $input    An array with the unsanitized word and a guess.
      *
-     * @return valid, "safe" word.
+     * @return string valid, "safe" word.
      */
     function getSanitizedWord($context, $input)
     {
