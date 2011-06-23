@@ -29,8 +29,8 @@ require_once dirname(__FILE__).'/../AccessController.php';
  * @version   Release: @package_version@
  * @link      http://www.owasp.org/index.php/ESAPI
  */
-class FileBasedAccessController implements AccessController {
-
+class FileBasedAccessController implements AccessController
+{
 
     /**
      * Checks if an account is authorized to access the referenced URL. Generally, this method should be invoked in the
@@ -258,7 +258,7 @@ class FileBasedAccessController implements AccessController {
     {
         throw new EnterpriseSecurityException("Method Not implemented");
     }
-     
+
     /**
      * Checks if an account is authorized to access the referenced file. The implementation should validate and canonicalize the
      * input to be sure the filepath is not malicious.
@@ -304,18 +304,18 @@ class FileBasedAccessController implements AccessController {
      *  	<li>Access control decisions must deny by default</li>
      *      </ol>
      * <li>If access is not permitted, throw an AccessControlException with details</li>
-     * </ol> 
-     * 
-     * @param serviceName 
+     * </ol>
+     *
+     * @param serviceName
      * 		the service name
-     * 
+     *
      * @throws AccessControlException
      * 		if access is not permitted
-     */				
+     */
     function assertAuthorizedForService($serviceName)
     {
-		throw new EnterpriseSecurityException("Method Not implemented");	
+		throw new EnterpriseSecurityException("Method Not implemented");
 	}
- 
+
 }
 ?>
