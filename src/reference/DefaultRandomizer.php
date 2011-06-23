@@ -28,20 +28,21 @@ class DefaultRandomizer implements Randomizer
     {
         $this->maxRand = mt_getrandmax();
     }
+
     /**
-     * Gets a random string of a desired length and character set.  The use of java.security.SecureRandom
-     * is recommended because it provides a cryptographically strong pseudo-random number generator.
-     * If SecureRandom is not used, the pseudo-random number gernerator used should comply with the
-     * statistical random number generator tests specified in <a href="http://csrc.nist.gov/cryptval/140-2.htm">
-     * FIPS 140-2, Security Requirements for Cryptographic Modules</a>, section 4.9.1.
+     * Gets a random string of a desired length and character set. The use of
+     * /dev/urandom  is recommended because it provides a cryptographically
+     * strong pseudo-random number generator. If /dev/urandom is not used, the
+     * pseudo-random number gernerator used should comply with the statistical
+     * random number generator tests specified in
+     * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
+     * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
-     * @param length
-     * 		the length of the string
-     * @param characterSet
-     * 		the set of characters to include in the created random string
-     *
-     * @return
-     * 		the random string of the desired length and character set
+     * @param int    $numChars      the length of the string
+     * @param string $characterSet  the set of characters to include in the
+     *                              created random string
+     * @return string the random string of the desired length and character set
+     * @throws InvalidArgumentException if params are too small
      */
     public function getRandomString($numChars, $charset)
     {
