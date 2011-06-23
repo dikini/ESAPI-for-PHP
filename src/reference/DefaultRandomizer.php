@@ -33,7 +33,7 @@ class DefaultRandomizer implements Randomizer
      * Gets a random string of a desired length and character set. The use of
      * /dev/urandom  is recommended because it provides a cryptographically
      * strong pseudo-random number generator. If /dev/urandom is not used, the
-     * pseudo-random number gernerator used should comply with the statistical
+     * pseudo-random number generator used should comply with the statistical
      * random number generator tests specified in
      * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
      * Requirements for Cryptographic Modules</a>, section 4.9.1.
@@ -63,14 +63,14 @@ class DefaultRandomizer implements Randomizer
     }
 
     /**
-     * Returns a random boolean.  The use of java.security.SecureRandom
-     * is recommended because it provides a cryptographically strong pseudo-random number generator.
-     * If SecureRandom is not used, the pseudo-random number gernerator used should comply with the
-     * statistical random number generator tests specified in <a href="http://csrc.nist.gov/cryptval/140-2.htm">
-     * FIPS 140-2, Security Requirements for Cryptographic Modules</a>, section 4.9.1.
+     * Returns a random boolean. The use of /dev/urandom is recommended because
+     * it provides a cryptographically strong pseudo-random number generator. If
+     * /dev/urandom is not used, the pseudo-random number generator used should
+     * comply with the statistical random number generator tests specified in
+     * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
+     * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
-     * @return
-     * 		true or false, randomly
+     * @return boolean randomly chosen
      */
     public function getRandomBoolean()
     {
@@ -78,11 +78,12 @@ class DefaultRandomizer implements Randomizer
     }
 
     /**
-     * Gets the random integer. The use of java.security.SecureRandom
-     * is recommended because it provides a cryptographically strong pseudo-random number generator.
-     * If SecureRandom is not used, the pseudo-random number gernerator used should comply with the
-     * statistical random number generator tests specified in <a href="http://csrc.nist.gov/cryptval/140-2.htm">
-     * FIPS 140-2, Security Requirements for Cryptographic Modules</a>, section 4.9.1.
+     * Gets the random integer. The use of /dev/urandom is recommended because
+     * it provides a cryptographically strong pseudo-random number generator. If
+     * /dev/urandom is not used, the pseudo-random number generator used should
+     * comply with the statistical random number generator tests specified in
+     * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
+     * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
      * @param min
      * 		the minimum integer that will be returned
@@ -98,11 +99,12 @@ class DefaultRandomizer implements Randomizer
     }
 
     /**
-     * Gets the random long. The use of java.security.SecureRandom
-     * is recommended because it provides a cryptographically strong pseudo-random number generator.
-     * If SecureRandom is not used, the pseudo-random number gernerator used should comply with the
-     * statistical random number generator tests specified in <a href="http://csrc.nist.gov/cryptval/140-2.htm">
-     * FIPS 140-2, Security Requirements for Cryptographic Modules</a>, section 4.9.1.
+     * Gets the random long. The use of /dev/urandom is recommended because
+     * it provides a cryptographically strong pseudo-random number generator. If
+     * /dev/urandom is not used, the pseudo-random number generator used should
+     * comply with the statistical random number generator tests specified in
+     * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
+     * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
      * mt_rand() without arguments will return between 0 and mt_getrandmax(). That's about as good as PHP gets
      *
@@ -135,11 +137,12 @@ class DefaultRandomizer implements Randomizer
     }
 
     /**
-     * Gets the random real.  The use of java.security.SecureRandom
-     * is recommended because it provides a cryptographically strong pseudo-random number generator.
-     * If SecureRandom is not used, the pseudo-random number gernerator used should comply with the
-     * statistical random number generator tests specified in <a href="http://csrc.nist.gov/cryptval/140-2.htm">
-     * FIPS 140-2, Security Requirements for Cryptographic Modules</a>, section 4.9.1.
+     * Gets the random real. The use of /dev/urandom is recommended because
+     * it provides a cryptographically strong pseudo-random number generator. If
+     * /dev/urandom is not used, the pseudo-random number generator used should
+     * comply with the statistical random number generator tests specified in
+     * <a href="http://csrc.nist.gov/cryptval/140-2.htm">FIPS 140-2, Security
+     * Requirements for Cryptographic Modules</a>, section 4.9.1.
      *
      * @param min
      * 		the minimum real number that will be returned
