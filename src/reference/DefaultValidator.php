@@ -158,8 +158,6 @@ class DefaultValidator implements Validator
         $dvr->setAllowNull($allowNull);
 
         $dvr->assertValid($context, $input);
-
-        return null;
     }
 
 
@@ -198,8 +196,6 @@ class DefaultValidator implements Validator
         $hvr->setAllowNull($allowNull);
 
         $hvr->assertValid($context, $input);
-
-        return null;
     }
 
 
@@ -236,8 +232,6 @@ class DefaultValidator implements Validator
         $ccvr->setAllowNull($allowNull);
 
         $ccvr->assertValid($context, $input);
-
-        return null;
     }
 
 
@@ -316,8 +310,6 @@ class DefaultValidator implements Validator
         $nvr->setAllowNull($allowNull);
 
         $nvr->assertValid($context, $input);
-
-        return null;
     }
 
 
@@ -362,8 +354,6 @@ class DefaultValidator implements Validator
         $nvr->setAllowNull($allowNull);
 
         $nvr->assertValid($context, $input);
-
-        return null;
     }
 
 
@@ -405,8 +395,6 @@ class DefaultValidator implements Validator
         $this->_assertValidNumber(
         $context, $input, $minValue, $maxValue, $allowNull
         );
-
-        return null;
     }
 
 
@@ -496,8 +484,6 @@ class DefaultValidator implements Validator
             $context
             );
         }
-
-        return null;
     }
 
     /**
@@ -569,8 +555,6 @@ class DefaultValidator implements Validator
             $context
             );
         }
-
-        return null;
     }
 
     /**
@@ -604,8 +588,6 @@ class DefaultValidator implements Validator
     private function _assertValidPrintable($context, $input, $maxLength, $allowNull)
     {
         $this->_assertValidInput($context, $input, 'PrintableASCII', $maxLength, $allowNull);
-
-        return null;
     }
 
     /**
