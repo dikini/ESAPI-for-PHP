@@ -65,6 +65,7 @@ class DefaultIntrusionDetector implements IntrusionDetector
      * storage for events generated for a user.
      *
      * @return this does not return a value.
+     * @todo pass in auditor as a param for better DI
      */
     function __construct()
     {
