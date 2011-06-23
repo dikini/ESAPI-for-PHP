@@ -109,7 +109,7 @@ class DefaultSecurityConfiguration implements SecurityConfiguration
      *
      * @return does not return a value.
      */
-    function __construct($path = '')
+    public function __construct($path = '')
     {
         try
         {
@@ -190,7 +190,7 @@ class DefaultSecurityConfiguration implements SecurityConfiguration
             $this->_events = null;
             $this->_logSpecial(
                 'SecurityConfiguration found no valid events in '.
-                'the Intrusion Detection section.' 
+                'the Intrusion Detection section.'
                 );
                 return false;
         }
@@ -317,7 +317,7 @@ class DefaultSecurityConfiguration implements SecurityConfiguration
         } else {
             $this->_logSpecial(
                 'getESAPIValidationExpression: Cannot find '.
-                'regular expression: ' . $type 
+                'regular expression: ' . $type
             );
             return false;
         }
@@ -850,25 +850,25 @@ class DefaultSecurityConfiguration implements SecurityConfiguration
             $path = 'HttpUtilities/ApprovedResources/resource';
             $this->_AllowedResources = $this->_getESAPIArrayProperty($path, null);
         }
-        
+
         return $this->_AllowedResources;
     }
-    
+
     /**
      * getSpecialDebugging returns boolean true if special debugging should be
      * enabled. Default is false.
      * At the moment, special debugging is used for producing output from
      * CodecDebug.
-     * 
+     *
      * @return bool True if special debugging should be enabled. Default is false.
      */
-    function getSpecialDebugging() 
+    function getSpecialDebugging()
     {
         if ( $this->_SpecialDebugging === null ) {
             $path = 'SpecialDebugging/Enabled';
             $this->_SpecialDebugging = $this->_getESAPIBooleanProperty($path, false);
         }
-        
+
         return $this->_SpecialDebugging;
     }
 }
