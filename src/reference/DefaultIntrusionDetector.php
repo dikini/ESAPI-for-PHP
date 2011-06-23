@@ -56,7 +56,7 @@ require_once dirname(__FILE__) . '/../IntrusionDetector.php';
 class DefaultIntrusionDetector implements IntrusionDetector
 {
 
-    private $_auditor     = null;
+    private $_auditor    = null;
     private $_userEvents = null;
 
 
