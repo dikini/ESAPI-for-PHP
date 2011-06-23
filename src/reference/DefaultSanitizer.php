@@ -50,11 +50,11 @@ require_once dirname ( __FILE__ ) . '/validation/WordValidationRule.php';
 class DefaultSanitizer implements Sanitizer
 {
 
-    private $encoder = null;
+    private $_encoder = null;
 
     public function __construct()
     {
-        $this->encoder = ESAPI::getEncoder();
+        $this->_encoder = ESAPI::getEncoder();
     }
 
 
@@ -73,7 +73,7 @@ class DefaultSanitizer implements Sanitizer
      */
     function getSanitizedHTML($context, $input)
     {
-        $hvr = new HTMLValidationRule('HTML_Validator', $this->encoder);
+        $hvr = new HTMLValidationRule('HTML_Validator', $this->_encoder);
 
         return $hvr->sanitize($context, $input);
     }
@@ -93,7 +93,7 @@ class DefaultSanitizer implements Sanitizer
      */
     function getSanitizedEmailAddress($context, $input)
     {
-        $evr = new EmailAddressValidationRule('EmailAddress_Validator', $this->encoder);
+        $evr = new EmailAddressValidationRule('EmailAddress_Validator', $this->_encoder);
 
         return $evr->sanitize($context, $input);
     }
@@ -113,13 +113,13 @@ class DefaultSanitizer implements Sanitizer
      */
     function getSanitizedURL($context, $input)
     {
-        $uvr = new URLValidationRule('URL_Validator', $this->encoder);
+        $uvr = new URLValidationRule('URL_Validator', $this->_encoder);
 
         return $uvr->sanitize($context, $input);
     }
     /**
      * Returns valid, "safe" English language word based on the provided guess.
-     * 
+     *
      * @param  $context A descriptive name of the parameter that you are
      *         validating (e.g. ProfilePage_Sig). This value is used by any
      *         logging or error handling that is done with respect to the value
@@ -130,8 +130,8 @@ class DefaultSanitizer implements Sanitizer
      */
     function getSanitizedWord($context, $input)
     {
-        $wvr = new WordValidationRule('Word_Validator', $this->encoder);
-        
+        $wvr = new WordValidationRule('Word_Validator', $this->_encoder);
+
         return $wvr->sanitize($context, $input);
     }
 }
